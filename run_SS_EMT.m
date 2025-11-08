@@ -10,7 +10,7 @@ num_classes = 16;        % Number of classes in the data
 params.N_m = 2;         % Number of objective functions
 params.N_sp = 32;       % Number of subtasks
 params.N_ind = 5;       % Number of individuals in a subtask
-params.GX = 100;        % Number of generations
+params.GX = 1;        % Number of generations
 params.D = 30;          % The number of selected bands
 params.rmp = 0.5;       % Migration probability
 params.C = 1.49445;     % Learning factor
@@ -21,3 +21,5 @@ params.C = 1.49445;     % Learning factor
 
 % Run SS_EMT
 [data_2D, sp_2D, gbest, N_sp] = SS_EMT(data, img_PCA, params);
+
+data_fin = selectData(data_2D,sp_2D,gbest,N_sp,params.D);
